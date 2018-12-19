@@ -488,11 +488,11 @@ func TestMap(t *testing.T) {
 		{[]string{"hello"}, []func(string) string{f1, f2}, []string{"HELLOHELLOHELLO"}},
 	}
 
-	for _, testCase := range testCases {
+	for i, testCase := range testCases {
 		require.Equalf(t,
 			testCase.expected,
 			Map(testCase.holder, testCase.funcs...),
-			"%v index is fails")
+			"%v index is fails", i)
 	}
 
 }
